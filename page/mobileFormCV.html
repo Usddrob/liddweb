@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- fonts -->
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <!-- fav-icon -->
+    <link rel="icon" href="../assets/img/fav.svg" type="image/x-icon" />
+
+    <title>Liddweb</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="../" class="logo_header"><img loading="lazy" src="../assets/img/logo_head.svg"
+                        alt="logo" /></a>
+                <div class="right__header">
+
+                    <button class="contact-button form_main">
+                        <p>Contact us</p>
+                    </button>
+                    <div class="left__header_mob">
+                        <button class="burger" id="burger_mob">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="menu-overlay mobile" id="menu_mob">
+        <div class="top_menu">
+            <div class="item_mob">
+                <a href="../page/service.html" class="title_mob">
+
+                    <p><span>01</span>Services</p>
+                    <img loading="lazy" src="../assets/icon/arrov_btn.svg" alt="arrow icon">
+                </a>
+                <div class="list_mob">
+                    <a href="../page/serviceCard.html">Web development</a>
+                    <a href="../page/serviceCard.html">Software development</a>
+                    <a href="../page/serviceCard.html">Digital Marketing</a>
+                    <a href="../page/serviceCard.html">Branding</a>
+                </div>
+            </div>
+            <div class="item_mob">
+                <a href="../page/portfolio.html" class="title_mob">
+                    <p><span>02</span>Portfolio</p>
+                    <img loading="lazy" src="../assets/icon/arrov_btn.svg" alt="arrow icon">
+                </a>
+            </div>
+            <div class="item_mob">
+                <a href="../page/about.html" class="title_mob">
+
+                    <p><span>03</span>About</p>
+                    <img loading="lazy" src="../assets/icon/arrov_btn.svg" alt="arrow icon">
+                </a>
+                <div class="list_mob">
+                    <a href="../page/about.html">Philosophy</a>
+                    <a href="../page/about.html">Team</a>
+                </div>
+            </div>
+            <div class="item_mob"> <a href="../page/blog.html" class="title_mob">
+
+                    <p> <span>04</span>Blog</p>
+                    <img loading="lazy" src="../assets/icon/arrov_btn.svg" alt="arrow icon">
+                </a> </div>
+
+        </div>
+        <div class="bottom_menu">
+            <button class="btn40 active">UA</button>
+            <button class="btn40">EN</button>
+            <button class="btn40">ES</button>
+        </div>
+    </nav>
+    <style>
+        main .modal_main.active {
+            position: relative;
+            padding: 0px;
+            z-index: 5;
+            padding-top: 72px;
+            height: auto;
+        }
+
+        .form_main_big {
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info_form_main {
+            padding: 0px !important;
+        }
+
+        .left_form_main {
+            margin-bottom: 50px;
+        }
+
+        .right_form_main {
+            margin-top: 50px;
+        }
+
+        @media (max-width:700px) {
+            .info_form_main h3 {
+                color: #FFF;
+                font-family: "IBM Plex Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%;
+                letter-spacing: 0.5px;
+            }
+
+            .info_form_main .flex {
+                margin-bottom: 40px;
+            }
+
+            .box_input {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 650px) {
+            #work-options {
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+                gap: 10px;
+                padding-bottom: 15px;
+                scrollbar-width: auto;
+                scrollbar-color: #27c5d9 rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        @media (max-width: 500px) {
+            #price-options {
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+                gap: 10px;
+                padding-bottom: 15px;
+                scrollbar-width: auto;
+                scrollbar-color: #27c5d9 rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        #work-options::-webkit-scrollbar,
+        #price-options::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            display: block;
+        }
+
+        #work-options::-webkit-scrollbar-track,
+        #price-options::-webkit-scrollbar-track {
+            background: var(--Colour-White-50, rgba(255, 255, 255, 0.05));
+        }
+
+        #work-options::-webkit-scrollbar-thumb,
+        #price-options::-webkit-scrollbar-thumb {
+            background: #27c5d9;
+            border-radius: 3px;
+            transition: all 0.35s ease-in-out;
+        }
+
+        #work-options,
+        #price-options {
+            -webkit-overflow-scrolling: touch;
+            overflow-x: scroll !important;
+        }
+
+        .no-scroll {
+            overflow: hidden !important;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <main>
+        <div class="modal_main active">
+            <form action="" class="form_main_big" id="form_main_big3">
+                <div class="left_form_main">
+                    <h4>Product <br> designer</h4>
+                    <p>
+                        Describe your project and leave <br />
+                        us your contact info, we’ll get back <br />
+                        to you within 24 hours.
+                    </p>
+                </div>
+                <div class="info_form_main">
+                    <h3>Personal info</h3>
+                    <div class="box_input">
+                        <div class="input_label error_input">
+                            <input type="text" placeholder="Name*" class="input_default" />
+                            <p class="error_text">This field is required</p>
+                        </div>
+                        <div class="input_label">
+                            <input type="text" placeholder="Last name*" class="input_default" />
+                            <p class="error_text"></p>
+                        </div>
+                    </div>
+                    <div class="box_input">
+                        <div class="input_label">
+                            <input type="tel" placeholder="Phone*" class="input_default" />
+                            <p class="error_text"></p>
+                        </div>
+                        <div class="input_label">
+                            <input type="email" placeholder="Email*" class="input_default" />
+                            <p class="error_text"></p>
+                        </div>
+                    </div>
+
+                    <textarea class="input_default"
+                        placeholder="Let the company know about your interest working there"></textarea>
+                    <h3 style="margin-top: 40px;">CV</h3>
+                    <div class="select_file">
+                        <p><button>Select file,</button> or drag & drop here</p>
+                    </div>
+                </div>
+                <div class="right_form_main">
+                   
+                    <button type="submit" class="btn_white" id="form_main_submit">
+                        <img loading="lazy" src="../assets/icon/arrov_btn-bluw.svg" alt="icon arrow button" />
+                        <p>SEND MESSAGE</p>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="grid3">
+                <div class="left_footer">
+                    <img loading="lazy" src="../assets/img/logo_head.svg" alt="logo Liddweb" />
+                    <p class="adress">
+                        2651 Sunset Blvd, <br />
+                        Rocklin, CA
+                    </p>
+                    <form action="" class="search_form">
+                        <input class="input_default" type="text" placeholder="Search" />
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <mask id="mask0_2055_36598" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_2055_36598)">
+                                <path
+                                    d="M19.5425 20.577L13.2618 14.296C12.7618 14.7088 12.1868 15.0319 11.5368 15.2653C10.8868 15.4986 10.2144 15.6153 9.51955 15.6153C7.81038 15.6153 6.36388 15.0235 5.18005 13.84C3.99621 12.6565 3.4043 11.2103 3.4043 9.50152C3.4043 7.79285 3.99605 6.34618 5.17955 5.16152C6.36305 3.97702 7.80921 3.38477 9.51805 3.38477C11.2267 3.38477 12.6734 3.97668 13.858 5.16051C15.0425 6.34435 15.6348 7.79085 15.6348 9.50002C15.6348 10.2142 15.515 10.8963 15.2753 11.5463C15.0355 12.1963 14.7155 12.7616 14.3155 13.2423L20.5963 19.523L19.5425 20.577ZM9.51955 14.1155C10.808 14.1155 11.8994 13.6683 12.7935 12.774C13.6879 11.8798 14.135 10.7885 14.135 9.50002C14.135 8.21152 13.6879 7.12018 12.7935 6.22601C11.8994 5.33168 10.808 4.88452 9.51955 4.88452C8.23105 4.88452 7.13971 5.33168 6.24555 6.22601C5.35121 7.12018 4.90405 8.21152 4.90405 9.50002C4.90405 10.7885 5.35121 11.8798 6.24555 12.774C7.13971 13.6683 8.23105 14.1155 9.51955 14.1155Z"
+                                    fill="white" fill-opacity="0.5" />
+                            </g>
+                        </svg>
+                    </form>
+                </div>
+                <div class="nav_footer">
+                    <div class="item_nav">
+                        <a href="../page/service.html" class="footer_title">Services</a>
+                        <a href="../page/serviceCard.html" class="footer_subtitle">Web development</a>
+                        <a href="../page/serviceCard.html" class="footer_subtitle">Software development</a>
+                        <a href="../page/serviceCard.html" class="footer_subtitle">Digital Marketing</a>
+                        <a href="../page/serviceCard.html" class="footer_subtitle">Branding</a>
+                    </div>
+                    <div class="item_nav">
+                        <a href="../page/portfolio.html" class="footer_title">Portfolio</a>
+
+                        <a href="../page/portfolioCase.html" class="footer_subtitle">Project 1</a>
+                        <a href="../page/portfolioCase.html" class="footer_subtitle">Project 2</a>
+                        <a href="../page/portfolioCase.html" class="footer_subtitle">Project 3</a>
+                        <a href="../page/portfolioCase.html" class="footer_subtitle">Project 4</a>
+                        <a href="../page/portfolio.html" class="see-more mobh">See more</a>
+                    </div>
+                    <div class="item_nav">
+                        <a href="../page/about.html" class="footer_title">About</a>
+                        <a href="../page/about.html" class="footer_subtitle">About company</a>
+                        <a href="../page/about.html" class="footer_subtitle">Team</a>
+                    </div>
+                    <div class="item_nav">
+                        <a href="../page/blog.html" class="footer_title">Blog</a>
+                        <a href="../page/blogCard.html" class="footer_subtitle">Article 1</a>
+                        <a href="../page/blogCard.html" class="footer_subtitle">Article 2</a>
+                        <a href="../page/blogCard.html" class="footer_subtitle mobh">Article 3</a>
+                        <a href="../page/blogCard.html" class="footer_subtitle mobh">Article 4</a>
+                        <a href="../page/blog.html" class="see-more mobh">See more</a>
+                    </div>
+                    <div class="item_nav mob">
+                        <a href="../page/career.html" class="footer_title">Careers</a>
+                        <a href="../page/blogCard.html" class="footer_subtitle">Job 1</a>
+                        <a href="../page/blogCard.html" class="footer_subtitle">Job 2</a>
+                    </div>
+                </div>
+                <div class="soc_footer">
+                    <p class="footer_title">Our media</p>
+                    <div class="soc_box">
+                        <a href="#">
+                            <img loading="lazy" src="../assets/icon/linkedin.svg" alt="linkedin icon" />
+                        </a>
+                        <a href="#">
+                            <img loading="lazy" src="../assets/icon/instagram.svg" alt="linkedin icon" />
+                        </a>
+                        <a href="tel:+1(916)589-7325">
+                            <img loading="lazy" src="../assets/icon/call.svg" alt="linkedin icon" />
+                        </a>
+                        <a href="mailto:liddweb@gmail.com">
+                            <img loading="lazy" src="../assets/icon/email.svg" alt="linkedin icon" />
+                        </a>
+                        <a href="#">
+                            <img loading="lazy" src="../assets/icon/behance.svg" alt="linkedin icon" />
+                        </a>
+                        <a href="#">
+                            <img loading="lazy" src="../assets/icon/clutch.svg" alt="linkedin icon" />
+                        </a>
+                    </div>
+                    <div class="adress_box">
+                        <a class="footer_subtitle" href="mailto:liddweb@gmail.com">
+                            liddweb@gmail.com
+                        </a>
+                        <a class="footer_subtitle" href="tel:+1(916)589-7325">
+                            +1(916)589-7325</a>
+                    </div>
+                </div>
+            </div>
+            <svg class="main__svg_logo" viewBox="0 0 1411 374" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1189.11 0.526855H1228.83V153.475H1230.82C1237.44 137.253 1247.04 125.335 1259.62 117.721C1272.53 109.776 1287.93 105.803 1305.8 105.803C1321.69 105.803 1336.09 108.948 1349.01 115.238C1361.92 121.528 1372.84 130.467 1381.78 142.054C1391.05 153.641 1398 167.711 1402.64 184.264C1407.6 200.816 1410.09 219.356 1410.09 239.881C1410.09 260.407 1407.6 278.946 1402.64 295.499C1398 312.052 1391.05 326.121 1381.78 337.708C1372.84 349.295 1361.92 358.234 1349.01 364.524C1336.09 370.814 1321.69 373.959 1305.8 373.959C1271.04 373.959 1246.05 358.068 1230.82 326.287H1228.83V368H1189.11V0.526855ZM1294.88 338.205C1317.39 338.205 1335.1 331.253 1348.01 317.348C1360.92 303.113 1367.38 284.574 1367.38 261.731V218.031C1367.38 195.188 1360.92 176.815 1348.01 162.91C1335.1 148.675 1317.39 141.557 1294.88 141.557C1285.94 141.557 1277.33 142.881 1269.06 145.53C1261.11 147.847 1254.16 151.158 1248.2 155.462C1242.24 159.765 1237.44 165.062 1233.8 171.352C1230.49 177.311 1228.83 183.767 1228.83 190.719V286.064C1228.83 294.34 1230.49 301.789 1233.8 308.41C1237.44 314.7 1242.24 320.162 1248.2 324.797C1254.16 329.101 1261.11 332.412 1269.06 334.729C1277.33 337.046 1285.94 338.205 1294.88 338.205Z"
+                    fill="white" />
+                <path
+                    d="M1062.56 373.959C1045.02 373.959 1029.12 370.814 1014.89 364.524C1000.98 358.234 988.901 349.295 978.638 337.708C968.707 325.79 960.927 311.72 955.299 295.498C950.002 278.946 947.354 260.406 947.354 239.881C947.354 219.686 950.002 201.313 955.299 184.76C960.927 168.207 968.707 154.137 978.638 142.55C988.901 130.632 1000.98 121.528 1014.89 115.238C1029.12 108.948 1045.02 105.803 1062.56 105.803C1079.78 105.803 1095.17 108.948 1108.74 115.238C1122.32 121.528 1133.9 130.301 1143.5 141.557C1153.11 152.482 1160.39 165.559 1165.35 180.787C1170.65 196.016 1173.3 212.734 1173.3 230.942V249.813H989.067V261.731C989.067 272.655 990.722 282.918 994.033 292.519C997.674 301.788 1002.64 309.899 1008.93 316.852C1015.55 323.804 1023.5 329.266 1032.77 333.239C1042.37 337.212 1053.13 339.198 1065.04 339.198C1081.27 339.198 1095.34 335.391 1107.25 327.776C1119.5 320.162 1128.94 309.237 1135.56 295.002L1163.86 315.362C1155.59 332.908 1142.68 347.143 1125.13 358.068C1107.59 368.662 1086.73 373.959 1062.56 373.959ZM1062.56 139.074C1051.64 139.074 1041.7 141.06 1032.77 145.033C1023.83 148.675 1016.05 153.972 1009.43 160.924C1003.14 167.876 998.171 176.152 994.529 185.753C990.887 195.023 989.067 205.285 989.067 216.541V220.017H1130.59V214.555C1130.59 191.712 1124.3 173.504 1111.72 159.931C1099.47 146.026 1083.09 139.074 1062.56 139.074Z"
+                    fill="white" />
+                <path
+                    d="M610.324 111.762H649.058L676.37 222.5L703.682 334.729H704.675L735.96 222.5L768.238 111.762H803.496L836.767 222.5L868.549 334.729H869.542L895.861 222.5L923.67 111.762H960.914L892.881 368H843.719L807.965 244.847L785.619 166.883H784.626L762.776 244.847L727.022 368H678.853L610.324 111.762Z"
+                    fill="white" />
+                <path
+                    d="M562.613 326.287H560.627C545.067 358.068 520.072 373.959 485.642 373.959C469.752 373.959 455.351 370.814 442.439 364.524C429.528 358.234 418.438 349.295 409.168 337.708C400.23 326.121 393.277 312.052 388.312 295.499C383.677 278.946 381.359 260.407 381.359 239.881C381.359 219.356 383.677 200.816 388.312 184.264C393.277 167.711 400.23 153.641 409.168 142.054C418.438 130.467 429.528 121.528 442.439 115.238C455.351 108.948 469.752 105.803 485.642 105.803C503.519 105.803 518.748 109.776 531.328 117.721C544.239 125.335 554.006 137.253 560.627 153.475H562.613V0.526855H602.34V368H562.613V326.287ZM496.567 338.205C505.506 338.205 513.948 337.046 521.893 334.729C530.17 332.412 537.287 329.101 543.246 324.797C549.205 320.162 553.84 314.7 557.151 308.41C560.792 301.789 562.613 294.34 562.613 286.064V190.719C562.613 183.767 560.792 177.311 557.151 171.352C553.84 165.062 549.205 159.765 543.246 155.462C537.287 151.158 530.17 147.847 521.893 145.53C513.948 142.881 505.506 141.557 496.567 141.557C474.055 141.557 456.344 148.675 443.433 162.91C430.521 176.815 424.066 195.188 424.066 218.031V261.731C424.066 284.574 430.521 303.113 443.433 317.348C456.344 331.253 474.055 338.205 496.567 338.205Z"
+                    fill="white" />
+                <path
+                    d="M324.213 326.287H322.226C306.667 358.068 281.672 373.959 247.242 373.959C231.351 373.959 216.95 370.814 204.039 364.524C191.128 358.234 180.037 349.295 170.768 337.708C161.829 326.121 154.877 312.052 149.911 295.499C145.276 278.946 142.959 260.407 142.959 239.881C142.959 219.356 145.276 200.816 149.911 184.264C154.877 167.711 161.829 153.641 170.768 142.054C180.037 130.467 191.128 121.528 204.039 115.238C216.95 108.948 231.351 105.803 247.242 105.803C265.119 105.803 280.348 109.776 292.928 117.721C305.839 125.335 315.605 137.253 322.226 153.475H324.213V0.526855H363.94V368H324.213V326.287ZM258.167 338.205C267.105 338.205 275.547 337.046 283.493 334.729C291.769 332.412 298.887 329.101 304.846 324.797C310.805 320.162 315.44 314.7 318.75 308.41C322.392 301.789 324.213 294.34 324.213 286.064V190.719C324.213 183.767 322.392 177.311 318.75 171.352C315.44 165.062 310.805 159.765 304.846 155.462C298.887 151.158 291.769 147.847 283.493 145.53C275.547 142.881 267.105 141.557 258.167 141.557C235.655 141.557 217.943 148.675 205.032 162.91C192.121 176.815 185.665 195.188 185.665 218.031V261.731C185.665 284.574 192.121 303.113 205.032 317.348C217.943 331.253 235.655 338.205 258.167 338.205Z"
+                    fill="white" />
+                <path
+                    d="M105.715 51.6752C97.108 51.6752 90.8179 49.6888 86.8452 45.7161C83.2036 41.4124 81.3828 35.9499 81.3828 29.3288V22.8732C81.3828 16.252 83.2036 10.9551 86.8452 6.98244C90.8179 2.67872 97.108 0.526855 105.715 0.526855C114.323 0.526855 120.448 2.67872 124.089 6.98244C128.062 10.9551 130.048 16.252 130.048 22.8732V29.3288C130.048 35.9499 128.062 41.4124 124.089 45.7161C120.448 49.6888 114.323 51.6752 105.715 51.6752ZM85.8521 111.762H125.579V368H85.8521V111.762Z"
+                    fill="white" />
+                <path
+                    d="M42.4188 368C28.5144 368 17.9205 364.193 10.6373 356.579C3.68508 348.633 0.208984 338.702 0.208984 326.784V0.526855H39.9358V333.239H77.6763V368H42.4188Z"
+                    fill="white" />
+            </svg>
+            <div class="grid3_footer">
+                <p class="footer_bottom">© 2024 LIDDWeb</p>
+                <p class="footer_bottom">All Rights Reserved</p>
+                <a href="#" class="footer_bottom right">Terms & Privacy</a>
+            </div>
+        </div>
+    </footer>
+    <div class="modal_main" id="modal_main2">
+        <div class="succes_container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <mask id="mask0_388_84051" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40"
+                    height="40">
+                    <rect width="40" height="40" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_388_84051)">
+                    <path
+                        d="M14.6861 36.4418L11.712 31.4293L6.06448 30.1918L6.61573 24.378L2.78906 19.9997L6.61573 15.6214L6.06448 9.80762L11.712 8.57012L14.6861 3.55762L20.0003 5.81387L25.3145 3.55762L28.2886 8.57012L33.9361 9.80762L33.3849 15.6214L37.2116 19.9997L33.3849 24.378L33.9361 30.1918L28.2886 31.4293L25.3145 36.4418L20.0003 34.1855L14.6861 36.4418ZM18.2503 25.3393L27.0899 16.4997L25.3336 14.6922L18.2503 21.7755L14.667 18.2435L12.9107 19.9997L18.2503 25.3393Z"
+                        fill="#27C5D9" />
+                </g>
+            </svg>
+            <h3>Your request has been <br />successfully submitted</h3>
+            <p>We will process it and contact you by e-mail.</p>
+            <a href="../" class="contact-button">
+                <p>Done</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <mask id="mask0_2054_9037" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                        width="24" height="24">
+                        <rect width="24" height="24" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_2054_9037)">
+                        <path
+                            d="M9.55032 17.6538L4.21582 12.3193L5.28482 11.2501L9.55032 15.5156L18.7158 6.3501L19.7848 7.41935L9.55032 17.6538Z"
+                            fill="white" />
+                    </g>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modalSuccess = document.getElementById("modal_main2");
+            const submitButton = document.getElementById("form_main_submit");
+
+            const openModal = modal => {
+                if (!modal) return;
+                modal.style.display = "flex";
+                requestAnimationFrame(() => {
+                    modal.classList.add("active");
+                    document.documentElement.classList.add("no-scroll");
+                    document.body.classList.add("no-scroll");
+                });
+            };
+
+            submitButton.addEventListener("click", e => {
+                e.preventDefault();
+                openModal(modalSuccess);
+            });
+        });
+    </script>
+    <script>
+        function select_file() {
+            const container = document.querySelector('.select_file');
+            let input = document.createElement('input');
+            input.type = 'file';
+            input.style.display = 'none';
+            document.body.appendChild(input);
+
+            const resetContainer = () => {
+                container.innerHTML = `<p><button>Select file,</button> or drag & drop here</p>`;
+                const btn = container.querySelector('button');
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+
+                    const newInput = document.createElement('input');
+                    newInput.type = 'file';
+                    newInput.style.display = 'none';
+                    document.body.appendChild(newInput);
+                    newInput.addEventListener('change', e => handleFiles(e.target.files));
+
+                    document.body.removeChild(input);
+                    input = newInput;
+
+                    input.click();
+                });
+            };
+
+            resetContainer();
+
+            const handleFiles = files => {
+                if (!files.length) return;
+                const file = files[0];
+                let icon = '';
+                const ext = file.name.split('.').pop().toLowerCase();
+                if (["pdf"].includes(ext)) icon = "../assets/icon/pdf-icon.svg";
+                else if (["doc", "docx"].includes(ext)) icon = "../assets/icon/doc-icon.svg";
+                else if (["png"].includes(ext)) icon = "../assets/icon/png-icon.svg";
+                else if (["jpg", "jpeg"].includes(ext)) icon = "../assets/icon/jpg-icon.svg";
+                else icon = 'assets/icon/file-icon.svg';
+
+                const objectUrl = URL.createObjectURL(file);
+
+                container.innerHTML = '';
+                const preview = document.createElement('div');
+                preview.className = 'file-preview';
+                preview.innerHTML = `
+      <img src="${icon}" alt="icon" />
+      <span>${file.name}</span>
+      <button class="open-file">Open</button>
+      <button class="remove-file">Remove</button>
+    `;
+                container.appendChild(preview);
+
+                preview.querySelector('.open-file').addEventListener('click', e => {
+                    e.preventDefault();
+                    window.open(objectUrl, '_blank');
+                });
+
+                preview.querySelector('.remove-file').addEventListener('click', e => {
+                    e.preventDefault();
+                    URL.revokeObjectURL(objectUrl);
+                    resetContainer();
+                });
+
+                setTimeout(() => preview.classList.add('active'), 10);
+            };
+
+            container.addEventListener('dragover', e => {
+                e.preventDefault();
+                container.classList.add('dragover');
+            });
+            container.addEventListener('dragleave', e => {
+                e.preventDefault();
+                container.classList.remove('dragover');
+            });
+            container.addEventListener('drop', e => {
+                e.preventDefault();
+                container.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+            input.addEventListener('change', e => handleFiles(e.target.files));
+        }
+
+        select_file();
+    </script>
+    <script defer src="../js/script.js"></script>
+</body>
+
+</html>
