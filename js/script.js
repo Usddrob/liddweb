@@ -98,10 +98,12 @@ document.querySelectorAll(".select-box").forEach((selectBox) => {
 
 document.querySelectorAll(".dropdown-item").forEach((item) => {
   item.addEventListener("click", function () {
-    const selectBox =
-      this.closest(".select-wrapper").querySelector(".selected");
+    const selectBox = this.closest(".select-wrapper").querySelector(".selected");
+
     selectBox.textContent = this.textContent;
     selectBox.dataset.value = this.dataset.value;
+    selectBox.classList.add("active"); 
+
     this.closest(".select-wrapper").classList.remove("active");
   });
 });
@@ -142,7 +144,6 @@ const SCROLL_THRESHOLD = 40;
 const HEADER_HEIGHT = 72;
 
 if (header) {
-  // Обробник скролу
   window.addEventListener("scroll", () => {
     const currentScrollPosition = window.pageYOffset;
     if (!ticking) {
@@ -166,7 +167,6 @@ if (header) {
     }
   });
   
-  // Якірні посилання з подвійним кліком
   document.querySelectorAll('.nav_sub a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();

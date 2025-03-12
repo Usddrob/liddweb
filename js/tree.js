@@ -1,3 +1,5 @@
+const preloaderStartTime = Date.now();
+
 let scene, camera, renderer, model;
 const container = document.getElementById("scene-container");
 const MOBILE_BREAKPOINT = 600;
@@ -21,6 +23,16 @@ function getModelPositionY() {
     if (width > 900) return 0.5;
     if (width > 300) return 0.9;
     return 0;
+}
+
+
+function hidePreloader() {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("hide");
+    setTimeout(() => {
+        preloader.style.opacity = "0";
+        preloader.style.visibility = "hidden";
+    }, 600); 
 }
 
 function init() {
@@ -56,7 +68,8 @@ function init() {
         "./model/LiddWeb_mobile.gltf" :
         "./model/LiddWeb.gltf";
 
-    new THREE.GLTFLoader().load(modelPath, function (gltf) {
+    const gltfLoader = new THREE.GLTFLoader();
+    gltfLoader.load(modelPath, function (gltf) {
         model = gltf.scene;
         model.scale.set(0.1, 0.1, 0.1);
         model.position.set(0.19, getModelPositionY(), 0);
@@ -75,6 +88,15 @@ function init() {
         });
 
         scene.add(model);
+
+     
+        const elapsedTime = Date.now() - preloaderStartTime;
+        const minDisplayTime = 1000;
+        if (elapsedTime < minDisplayTime) {
+            setTimeout(hidePreloader, minDisplayTime - elapsedTime);
+        } else {
+            hidePreloader();
+        }
     });
 
     const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
