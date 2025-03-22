@@ -178,6 +178,16 @@ $color: #27c5d9;
     }
   }
 }
+.big_title {
+  color: var(--Colour-White-1000, #fff);
+  font-family: "IBM Plex Sans";
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80%;
+  letter-spacing: -20px;
+  padding-right: 25px;
+  white-space: nowrap;}
 @media (max-width: 1100px) {
   .big_title {
     font-size: 150px;

@@ -188,3 +188,12 @@ if (header) {
     });
   });
 }
+// preloader
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    document.getElementById("preloader").style.opacity = "0";
+    setTimeout(function () {
+      document.getElementById("preloader").style.display = "none";
+    }, 400); 
+  }, 1000);
+});
